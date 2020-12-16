@@ -1,4 +1,5 @@
+const sessionValidation = require("./session");
 const userValidation = require("./user");
-const tokenValidation = require("./token");
+const validateToken = require("./token");
 
-module.exports = { ...tokenValidation, ...userValidation };
+module.exports = { ...sessionValidation, ...userValidation, validateToken };
