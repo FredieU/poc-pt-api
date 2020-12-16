@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const validateLogin = (data) => {
   const schema = Joi.object({
-    username: Joi.string().alphanum().min(6).max(255).required(),
+    email: Joi.string().min(6).max(255).email().required(),
     password: Joi.string().min(6).required(),
   });
 
@@ -12,7 +12,7 @@ const validateLogin = (data) => {
 const validateRegister = (data) => {
   const schema = Joi.object({
     username: Joi.string().alphanum().min(6).max(255).required(),
-    email: Joi.string().min(6).email().required(),
+    email: Joi.string().min(6).max(255).email().required(),
     password: Joi.string().min(6).required(),
   });
 
