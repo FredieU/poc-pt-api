@@ -9,8 +9,11 @@ router.post("/register", async (req, res) => {
   const { error } = validateRegister(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(422).send("Email is already taken");
+  const userByEmail = await User.findOne({ email: req.body.email });
+  if (userByEmail) return res.status(422).send("Email is already taken");
+
+  const userByUsername = await User.findOne({ username: req.body.username });
+  if (userByUsername) return res.status(422).send("Username is already taken");
 
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(req.body.password, salt);
@@ -25,7 +28,7 @@ router.post("/register", async (req, res) => {
     const { _id, email, username } = await newUser.save();
     res.send({ _id, email, username });
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
@@ -36,7 +39,7 @@ router.post("/login", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send(INVALID_LOGIN_MSG);
+  if (!user) return res.status(401).send(INVALID_LOGIN_MSG);
 
   const passwordIsValid = await bcrypt.compare(
     req.body.password,

@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const authRoute = require("./routes/auth");
+const usersRoute = require("./routes/users");
 const sessionsRoute = require("./routes/sessions");
 
 require("dotenv").config({ path: `./.env.${process.env.NODE_ENV}` });
@@ -12,7 +12,7 @@ mongoose.connect(process.env.DB_CONNECT, { useUnifiedTopology: true }, () =>
 );
 
 app.use(express.json());
-app.use("/api/user", authRoute);
+app.use("/api/users", usersRoute);
 app.use("/api/sessions", sessionsRoute);
 
 app.get("/", (req, res) => res.send("boop"));

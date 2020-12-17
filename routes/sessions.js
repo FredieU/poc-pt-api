@@ -23,7 +23,7 @@ router.post("/add", validateToken, async (req, res) => {
     const { _id, time, name } = await newSession.save();
     res.send({ _id, time, name });
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).send(error);
   }
 });
 
