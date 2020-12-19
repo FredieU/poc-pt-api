@@ -1,0 +1,3 @@
+[submodule "client"]
+	path = client
+	url = https://fredieu:2d734ce403daf057aa9573ae28625d0d3cbed86a@github.com/FredieU/pt-ui
