@@ -1,0 +1,10 @@
+.form-group {
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.form-group__error {
+  font-weight: bold;
+  margin: 0;
+  color: red;
+}

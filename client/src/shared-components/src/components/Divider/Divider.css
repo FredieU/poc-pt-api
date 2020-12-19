@@ -1,0 +1,29 @@
+.divider {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.divider .divider__label {
+  font-weight: bold;
+  color: darkgray;
+  margin: 0 1rem;
+}
+
+.divider .divider__border {
+  margin: auto 0;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.divider.divider--small .divider__border {
+  height: 1px;
+}
+
+.divider.divider--medium .divider__border {
+  height: 2px;
+}
+
+.divider.divider--large .divider__border {
+  height: 3px;
+}

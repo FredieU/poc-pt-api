@@ -1,0 +1,25 @@
+.input {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid lightgrey;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.input:focus {
+  border-bottom: 3px solid black;
+}
+
+.input--errored {
+  border-bottom: 2px solid lightcoral;
+}
+
+.input--errored:focus {
+  border-bottom: 3px solid red;
+}
+
+.input__label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

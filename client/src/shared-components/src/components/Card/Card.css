@@ -1,0 +1,13 @@
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.card--bordered {
+  border: 1px solid lightgray;
+}
+
+.card--raised {
+  box-shadow: rgb(0 0 0 / 40%) 0px 0px 20px 0px;
+}
