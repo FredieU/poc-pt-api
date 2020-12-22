@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "deploy": "git push heroku master",
-    "heroku-postbuild": "cd client && npm install && cd src/shared-components && npm install && cd ../.. && npm run build",
     "logs": "heroku logs --tail",
     "setup": "npm install && cd client && npm install && cd src/shared-components && npm install",
     "start": "NODE_ENV=production node index.js",
