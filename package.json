@@ -1,7 +1,7 @@
 {
   "name": "poc_pt_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proof of concept REST API",
   "main": "index.js",
   "scripts": {
     "deploy": "git push heroku master",
